@@ -1,6 +1,24 @@
 // Adjust this value to control the scroll offset (in pixels)
 const scrollOffset = 20; // Increase this number to add more space at the top
 
+let lastScrollTop = 0;
+const leftPanel = document.getElementById('LeftPanel');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (window.innerWidth <= 768) {  // Only on mobile
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+            // Scrolling down & past threshold
+            leftPanel.classList.add('hide');
+        } else {
+            // Scrolling up or at top
+            leftPanel.classList.remove('hide');
+        }
+    }
+    
+    lastScrollTop = scrollTop;
+});
 
 const mouseGlow = document.getElementById('MouseGlow');
 let currentX = 0;
