@@ -1,5 +1,5 @@
 // Adjust this value to control the scroll offset (in pixels)
-const scrollOffset = 20; // Increase this number to add more space at the top
+const scrollOffset = window.innerWidth <= 768 ? 180 : 20; // Increased mobile offset for better visibility
 
 let lastScrollTop = 0;
 const leftPanel = document.getElementById('LeftPanel');
@@ -64,9 +64,12 @@ document.querySelectorAll('.NavItem').forEach(navItem => {
         // Calculate the target scroll position relative to the right panel
         const targetPosition = targetElement.offsetTop;
         
-        // Smooth scroll the right panel, using the scrollOffset variable
+        // Adjust scroll position based on screen size
+        const mobileOffset = window.innerWidth <= 768 ? scrollOffset : scrollOffset;
+        
+        // Smooth scroll the right panel
         rightPanel.scrollTo({
-            top: targetPosition - scrollOffset,
+            top: targetPosition - mobileOffset,
             behavior: 'smooth'
         });
 
@@ -87,7 +90,9 @@ document.getElementById('RightPanel').addEventListener('scroll', () => {
     let current = '';
     
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - scrollOffset - 80; // Added offset here too for consistency
+        // Adjust offset based on screen size
+        const mobileOffset = window.innerWidth <= 768 ? scrollOffset : (scrollOffset + 80);
+        const sectionTop = section.offsetTop - mobileOffset;
         const sectionHeight = section.clientHeight;
         if (rightPanel.scrollTop >= sectionTop - sectionHeight / 3) {
             current = section.getAttribute('id');

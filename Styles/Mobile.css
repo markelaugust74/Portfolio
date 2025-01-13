@@ -4,6 +4,7 @@
         height: auto;
         position: fixed;
         left: 0;
+        top: 0;
         margin-top: 0;
         padding: 2vh 5vw;
         background-color: rgba(26, 26, 26, 0.95);
@@ -19,9 +20,19 @@
 
     #RightPanel {
         width: 90vw;
-        padding: 20vh 5vw 5vh 5vw;
-        margin: 0;
+        position: relative;
+        left: 0;
+        padding: 5vw;
+        margin-top: 22vh;
         scroll-behavior: smooth;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .Section {
+        margin-bottom: 8vh;
+        padding: 2vh 0;
+        width: 100%;
     }
 
     .NavContainer {
@@ -30,7 +41,7 @@
         top: auto;
         transform: none;
         justify-content: space-around;
-        margin-top: 3vh;
+        margin-top: 2vh;
     }
 
     .NavItem {
@@ -41,7 +52,7 @@
 
     .NavItemText {
         margin-left: 0;
-        margin-top: 1vh;
+        margin-top: 0.5vh;
     }
 
     #SocialsContainer {
@@ -49,17 +60,19 @@
         top: auto;
         transform: none;
         justify-content: center;
-        margin-top: 3vh;
+        margin-top: 2vh;
     }
 
     .tech-carousel {
         width: 100%;
         margin: 3vh 0;
+        overflow: hidden;
     }
 
     .Project {
         flex-direction: column;
         gap: 0.5vh;
+        margin-bottom: 2vh;
     }
 
     .Separator {
@@ -67,19 +80,22 @@
     }
 
     h1 {
-        font-size: 4vh;
+        font-size: 3.5vh;
         text-align: center;
+        margin-bottom: 1vh;
     }
 
     h2 {
-        font-size: 2.5vh;
+        font-size: 2.2vh;
         text-align: center;
+        margin-bottom: 2vh;
     }
 
     p {
-        font-size: 2vh;
-        line-height: 3vh;
+        font-size: 1.8vh;
+        line-height: 2.8vh;
         text-align: center;
+        margin-bottom: 2vh;
     }
 
     #MouseGlow, #MouseGlowBlur {
@@ -89,20 +105,28 @@
 
 /* Additional styles for very small screens */
 @media screen and (max-width: 480px) {
+    #RightPanel {
+        padding: 22vh 5vw 10vh 5vw;
+    }
+
     h1 {
-        font-size: 3.5vh;
+        font-size: 3vh;
     }
 
     h2 {
-        font-size: 2vh;
+        font-size: 1.8vh;
     }
 
     p {
-        font-size: 1.8vh;
-        line-height: 2.8vh;
+        font-size: 1.6vh;
+        line-height: 2.6vh;
     }
 
     .tech-carousel {
         margin: 2vh 0;
+    }
+
+    .Section {
+        margin-bottom: 6vh;
     }
 } 
