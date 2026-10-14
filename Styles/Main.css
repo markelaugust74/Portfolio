@@ -260,3 +260,39 @@ html {
     0% { transform: translateX(50vh); }
     100% { transform: translateX(-50vh); }
 }
+/* Experience entries and project notes */
+.Role {
+    margin-bottom: 2.5vh;
+}
+
+.RoleHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5vh;
+}
+
+.RoleHead p {
+    font-size: 1.4vh;
+    white-space: nowrap;
+}
+
+.RoleHead .RoleTitle {
+    color: white;
+    font-weight: bold;
+}
+
+.ProjectNote {
+    font-size: 1.4vh;
+    line-height: 2.1vh;
+    margin: 0 0.75vh 1.5vh 0.75vh;
+}
+
+a.Inline {
+    color: rgb(175, 175, 175);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a.Inline:hover {
+    color: white;
+}
